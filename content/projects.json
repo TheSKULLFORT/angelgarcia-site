@@ -1,0 +1,221 @@
+[
+  {
+    "slug": "riot-games-valorant",
+    "client": "Riot Games",
+    "cartridge_label": "",
+    "title": "VALORANT Publishing",
+    "edition": "blaze",
+    "year": "Current",
+    "summary": "Creative leadership for VALORANT's publishing team: campaigns, launches and partnerships for a global tactical shooter.",
+    "screen_tag": "Publishing creative",
+    "poster_line_1": "Riot",
+    "poster_line_2": "Games",
+    "facts": [
+      {
+        "label": "Role",
+        "value": "Principal Creative Director"
+      },
+      {
+        "label": "Team",
+        "value": "VALORANT Publishing"
+      },
+      {
+        "label": "Status",
+        "value": "Current"
+      }
+    ],
+    "cover": "",
+    "media": [],
+    "challenge": "",
+    "idea": "",
+    "result": "",
+    "link": "",
+    "published": true
+  },
+  {
+    "slug": "levelwerk-handheld",
+    "client": "Levelwerk",
+    "cartridge_label": "",
+    "title": "LW Handheld with SFOS",
+    "edition": "acid",
+    "year": "",
+    "summary": "A handheld concept that mixes 3D product development with AI workflows for music and sound. Inspired by Dieter Rams, the Game Boy and the Analogue Pocket.",
+    "screen_tag": "Handheld concept",
+    "poster_line_1": "Level",
+    "poster_line_2": "werk",
+    "facts": [
+      {
+        "label": "Type",
+        "value": "Personal project"
+      },
+      {
+        "label": "Tools",
+        "value": "MOI3D · Blender · Premiere · After Effects"
+      },
+      {
+        "label": "Audio",
+        "value": "AI music and SFX"
+      }
+    ],
+    "cover": "",
+    "media": [],
+    "challenge": "",
+    "idea": "",
+    "result": "",
+    "link": "",
+    "published": true
+  },
+  {
+    "slug": "meta-facebook-gaming",
+    "client": "Meta",
+    "cartridge_label": "",
+    "title": "Facebook Gaming",
+    "edition": "blue",
+    "year": "",
+    "summary": "Helped bring Facebook Gaming to content creators, streamers and game developers around the world.",
+    "screen_tag": "Facebook Gaming",
+    "poster_line_1": "Facebook",
+    "poster_line_2": "Gaming",
+    "facts": [
+      {
+        "label": "Role",
+        "value": "Creative Director"
+      },
+      {
+        "label": "Audience",
+        "value": "Creators · streamers · developers"
+      },
+      {
+        "label": "Reach",
+        "value": "Global"
+      }
+    ],
+    "cover": "",
+    "media": [],
+    "challenge": "",
+    "idea": "",
+    "result": "",
+    "link": "",
+    "published": true
+  },
+  {
+    "slug": "naughty-dog",
+    "client": "Naughty Dog",
+    "cartridge_label": "",
+    "title": "Studio Brand & Marketing",
+    "edition": "clear",
+    "year": "",
+    "summary": "The studio's one-stop shop for branding and marketing material.",
+    "screen_tag": "Brand + marketing",
+    "poster_line_1": "Naughty",
+    "poster_line_2": "Dog",
+    "facts": [
+      {
+        "label": "Role",
+        "value": "Marketing & Brand Lead"
+      },
+      {
+        "label": "Shipped",
+        "value": "Uncharted: The Lost Legacy · The Last of Us Part II"
+      }
+    ],
+    "cover": "",
+    "media": [],
+    "challenge": "",
+    "idea": "",
+    "result": "",
+    "link": "",
+    "published": true
+  },
+  {
+    "slug": "the-last-of-us-part-ii-console",
+    "client": "PlayStation",
+    "cartridge_label": "The Last of Us II",
+    "title": "The Last of Us Part II Limited Edition Console",
+    "edition": "smoke",
+    "year": "",
+    "summary": "Limited edition console for The Last of Us Part II.",
+    "screen_tag": "TLOU II console",
+    "poster_line_1": "Last of",
+    "poster_line_2": "Us II",
+    "facts": [
+      {
+        "label": "Client",
+        "value": "PlayStation · Naughty Dog"
+      },
+      {
+        "label": "Type",
+        "value": "Limited edition hardware"
+      }
+    ],
+    "cover": "",
+    "media": [],
+    "challenge": "",
+    "idea": "",
+    "result": "",
+    "link": "",
+    "published": true
+  },
+  {
+    "slug": "activision",
+    "client": "Activision",
+    "cartridge_label": "",
+    "title": "Game Marketing",
+    "edition": "acid",
+    "year": "",
+    "summary": "Designer and team lead across major releases, developing marketing material for Call of Duty, Destiny and Guitar Hero Live.",
+    "screen_tag": "Call of Duty + Destiny",
+    "poster_line_1": "Activi-",
+    "poster_line_2": "sion",
+    "facts": [
+      {
+        "label": "Role",
+        "value": "Graphic Design Lead"
+      },
+      {
+        "label": "Shipped",
+        "value": "16 titles"
+      },
+      {
+        "label": "Franchises",
+        "value": "Call of Duty · Destiny · Guitar Hero"
+      }
+    ],
+    "cover": "",
+    "media": [],
+    "challenge": "",
+    "idea": "",
+    "result": "",
+    "link": "",
+    "published": true
+  },
+  {
+    "slug": "black-ops-iii-ps4-bundle",
+    "client": "PlayStation",
+    "cartridge_label": "Black Ops III",
+    "title": "Black Ops III Limited Edition PS4 Bundle",
+    "edition": "blaze",
+    "year": "",
+    "summary": "The official Call of Duty: Black Ops III limited edition PS4 bundle.",
+    "screen_tag": "Black Ops III bundle",
+    "poster_line_1": "Black",
+    "poster_line_2": "Ops III",
+    "facts": [
+      {
+        "label": "Client",
+        "value": "PlayStation · Activision"
+      },
+      {
+        "label": "Type",
+        "value": "Limited edition bundle"
+      }
+    ],
+    "cover": "",
+    "media": [],
+    "challenge": "",
+    "idea": "",
+    "result": "",
+    "link": "",
+    "published": true
+  }
+]

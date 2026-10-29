@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="Angel Garcia, Creative Director">
+<meta property="og:description" content="Brand and marketing creative for games, tech and entertainment.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#bcbfbe">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0} img{max-width:100%} [hidden]{display:none!important}</style>
+<title>Angel Garcia</title>
+<meta name="description" content="Angel Garcia, creative director for brand and marketing in gaming, tech and entertainment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&family=Silkscreen&display=swap">
+<style>
+/* Layout: a gig-poster hero. A hairline spec header, then the handheld floating in a soft studio spotlight over giant cropped type, with metadata and credits in the corners and a print grain over everything. An acid band carries the translucent cartridge shelf. Below, back-of-box tables for credits, capabilities and contact. */
+:root{
+  --ground:#c3c5c4; --panel:#d5d6d5; --alloy-300:#a7a9a8; --line:#8e9190; --rule:#0e0f10;
+  --ink:#0e0f10; --ink-muted:#3a3d3e; --poster:#0e0f10;
+  --signal:#ff4d00; --signal-text:#8f2a00; --acid:#b3ff00; --on-acid:#0e0f10; --os-blue:#1f24ff;
+  --graphite:#1c1d1f; --screen-ink:#ffffff; --focus:#ff4d00; --floor:20,22,24; --spot:#dcdedd; --grain-blend:multiply; --grain-op:.07;
+  --font-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --font-pixel:"Silkscreen","JetBrains Mono",ui-monospace,monospace;
+  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--space-12:48px;--space-16:64px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --ground:#0b0c0d; --panel:#17181a; --alloy-300:#2a2c2f; --line:#3a3d40; --rule:#e8e9e8;
+  --ink:#eff0ef; --ink-muted:#a4a7a8; --poster:#eff0ef; --signal-text:#ff6a2a; --graphite:#232427; --floor:0,0,0; --spot:#1e2023; --grain-blend:screen; --grain-op:.06; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --ground:#0b0c0d; --panel:#17181a; --alloy-300:#2a2c2f; --line:#3a3d40; --rule:#e8e9e8;
+  --ink:#eff0ef; --ink-muted:#a4a7a8; --poster:#eff0ef; --signal-text:#ff6a2a; --graphite:#232427; --floor:0,0,0; --spot:#1e2023; --grain-blend:screen; --grain-op:.06; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--font-display);font-size:15px;line-height:1.55;overflow-x:hidden}
+.wrap{max-width:1440px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.meta{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;line-height:1.5;color:var(--ink-muted)}
+.meta b{font-weight:500;color:var(--ink)}
+.px{font-family:var(--font-pixel);font-weight:400;letter-spacing:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+
+/* spec header */
+.head{display:grid;grid-template-columns:1fr auto;border-top:3px solid var(--rule);border-bottom:1px solid var(--rule);margin-top:var(--space-6)}
+.head > *{padding:var(--space-4) var(--space-6);display:flex;align-items:center;gap:var(--space-4);min-width:0}
+.head > * + *{border-left:1px solid var(--rule)}
+.head .who{padding-left:0;text-decoration:none}
+.head .who .mark{flex:none;width:44px;height:44px;border-radius:50%;display:block}
+.head .who span{font-size:clamp(18px,2vw,26px);line-height:1.05;font-weight:500}
+.head nav{display:grid;grid-template-columns:auto auto;gap:2px var(--space-6);padding-right:0}
+.head nav a{text-decoration:none;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-muted)}
+.head nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto;min-height:clamp(600px,84vh,880px);padding-block:var(--space-6)}
+.bg{position:absolute;inset:0;container-type:inline-size;overflow:hidden;background:radial-gradient(ellipse 36% 50% at 50% 52%, var(--spot) 0%, transparent 100%)}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:50;opacity:var(--grain-op);mix-blend-mode:var(--grain-blend);background-size:180px 180px}
+.poster{position:absolute;left:0;right:0;top:55%;transform:translateY(-50%);text-align:center;color:var(--poster);pointer-events:none;user-select:none}
+.poster span{display:block;font-weight:800;font-stretch:100%;font-size:17cqw;line-height:.8;letter-spacing:-.045em;white-space:nowrap;text-transform:uppercase}
+.poster span:nth-child(2){transform:translateX(6cqw)}
+.poster.swap span{animation:rise .55s cubic-bezier(.2,.8,.2,1) both}
+.poster.swap span:nth-child(2){animation-delay:.06s}
+@keyframes rise{from{clip-path:inset(0 0 100% 0);transform:translateY(12%)}to{clip-path:inset(0 0 0 0)}}
+.poster.swap span:nth-child(2){animation-name:rise2}
+@keyframes rise2{from{clip-path:inset(0 0 100% 0);transform:translate(6cqw,12%)}to{clip-path:inset(0 0 0 0);transform:translateX(6cqw)}}
+#stage{position:absolute;inset:0;touch-action:pan-y;cursor:grab;user-select:none}
+#stage.dragging{cursor:grabbing}
+#stage canvas{display:block;width:100%;height:100%}
+.ov{position:relative;z-index:2;pointer-events:none;min-width:0}
+.ov a,.ov button{pointer-events:auto}
+.tl{grid-column:1;grid-row:1;max-width:300px}
+.tl p{font-size:15px;line-height:1.45;margin:var(--space-3) 0 0;color:var(--ink)}
+.tr{grid-column:2;grid-row:1;justify-self:end;text-align:left;width:220px}
+.credits{margin:0;display:flex;flex-direction:column;gap:var(--space-3)}
+.credits dt{font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-muted)}
+.credits dd{margin:0;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);line-height:1.35}
+.bl{grid-column:1;grid-row:3;align-self:end;max-width:380px}
+.cartno{font-weight:800;font-size:clamp(44px,4.6vw,68px);line-height:.9;letter-spacing:-.045em;font-variant-numeric:tabular-nums;text-transform:uppercase;margin:0}
+.cartsub{font-size:20px;font-weight:600;line-height:1.15;margin:var(--space-2) 0 0}
+.bl p.sum{margin:var(--space-3) 0 0;font-size:14.5px;line-height:1.5;color:var(--ink)}
+.br{grid-column:2;grid-row:3;justify-self:end;align-self:end;text-align:right}
+.led{display:inline-flex;align-items:center;gap:var(--space-2)}
+.led::before{content:"";width:18px;height:3px;background:var(--alloy-300)}
+.led.on::before{background:var(--signal);box-shadow:0 0 8px var(--signal)}
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-4)}
+.btn{appearance:none;cursor:pointer;font-family:var(--font-mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;
+  display:inline-flex;align-items:center;gap:var(--space-2);padding:10px var(--space-4);border:1.5px solid var(--rule);background:transparent;color:var(--ink)}
+.btn.solid{background:var(--rule);color:var(--ground)}
+.btn:hover{background:var(--rule);color:var(--ground)}
+.btn.signal{background:var(--signal);border-color:var(--signal);color:#0e0f10}
+
+/* acid band + shelf */
+.band{background:var(--acid);color:var(--on-acid)}
+.band .wrap{display:grid;grid-template-columns:auto 1fr;gap:var(--space-8);align-items:center;padding-block:var(--space-6)}
+.band .ins{font-weight:800;font-size:34px;line-height:.86;letter-spacing:-.03em;text-transform:uppercase;margin:0}
+.band .meta{color:var(--on-acid);margin-top:var(--space-3)}
+.band kbd{font-family:var(--font-mono);font-size:10px;border:1px solid var(--on-acid);padding:0 4px}
+.shelf3d{position:relative;min-width:0}
+#shelfCanvas{position:absolute;left:0;top:-20px;width:100%;height:calc(100% + 36px);pointer-events:none;display:none}
+.shelf3d-on #shelfCanvas{display:block}
+.shelf3d .shelf{position:relative;z-index:1}
+.shelf3d-on .shelf .cart{width:104px;height:133px;clip-path:none;background:transparent;border-color:transparent;box-shadow:none;border-radius:12px}
+.shelf3d-on .shelf .cart::before,.shelf3d-on .shelf .cart::after{display:none}
+.shelf3d-on .shelf .cart > *{opacity:0}
+.shelf3d-on .shelf .cart:hover,.shelf3d-on .shelf .cart[aria-current="true"]{transform:none;box-shadow:none}
+.shelf3d-on .shelf .cart.in{opacity:1}
+.shelf3d-on .shelf .cart:focus-visible{outline:2px solid var(--on-acid);outline-offset:4px}
+.shelf{list-style:none;margin:0;padding:var(--space-4) var(--space-1) var(--space-2);display:flex;gap:var(--space-3);overflow-x:auto;min-width:0;scrollbar-width:thin;scrollbar-color:var(--on-acid) transparent}
+.cart{--ed:#e8eef0;--edtx:#0e0f10;appearance:none;cursor:pointer;flex:none;width:104px;height:133px;position:relative;text-align:left;
+  background:color-mix(in srgb, var(--ed) 80%, transparent);border:1.5px solid #0e0f10;border-radius:5px;clip-path:polygon(0 0,100% 0,100% 100%,20px 100%,0 calc(100% - 20px));
+  padding:var(--space-2);display:flex;flex-direction:column;justify-content:space-between;color:var(--edtx);
+  transition:transform .2s cubic-bezier(.2,.8,.2,1);font-family:var(--font-display);overflow:hidden}
+.cart::before{content:"";position:absolute;left:14px;right:14px;top:44px;bottom:10px;border-radius:3px;background:rgba(14,15,16,.16);border:1px dashed rgba(14,15,16,.25)}
+.cart::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.5) 0 18%,transparent 34%);pointer-events:none}
+.cart .no{position:relative;font-family:var(--font-mono);font-size:10px;letter-spacing:.06em}
+.cart .nm{position:relative;font-weight:700;font-size:13px;line-height:1.05}
+.cart .ed{position:relative;font-family:var(--font-mono);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.cart:hover{transform:translateY(-5px)}
+.cart[aria-current="true"]{transform:translateY(-10px);box-shadow:0 3px 0 #0e0f10}
+.cart.in{opacity:.35}
+
+/* sections */
+section.box{padding-block:var(--space-16) 0}
+.box-head{display:grid;grid-template-columns:200px 1fr auto;border-top:3px solid var(--rule);border-bottom:1px solid var(--rule)}
+.box-head > *{padding:var(--space-3) var(--space-4);display:flex;align-items:center}
+.box-head > *:first-child{padding-left:0}
+.box-head > * + *{border-left:1px solid var(--rule)}
+.box-head h3{margin:0;font-size:clamp(24px,2.6vw,36px);font-weight:700;letter-spacing:-.02em;line-height:1}
+.box-head .n{font-weight:800;font-size:clamp(28px,3vw,44px);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.index{list-style:none;margin:0;padding:0}
+.index li{display:grid;grid-template-columns:200px 1.1fr 1.4fr 1fr auto auto;gap:var(--space-6);align-items:center;padding:16px 0;border-bottom:1px solid var(--line);cursor:pointer;transition:padding .25s cubic-bezier(.16,1,.3,1)}
+.index li:hover{padding-left:var(--space-3)}
+.index .c{font-weight:600;font-size:20px;letter-spacing:-.015em;line-height:1.15}
+.index .p{font-size:15px;line-height:1.35}
+.index .r{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-muted)}
+.index .sw{display:inline-flex;align-items:center;gap:var(--space-2)}
+.index .sw i{width:10px;height:14px;border-radius:3px 3px 1px 1px;box-shadow:inset 0 0 0 1px rgba(14,15,16,.6)}
+.index .go{appearance:none;border:1px solid var(--rule);background:none;color:var(--ink);font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:7px 12px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.index .go:hover{background:var(--rule);color:var(--ground)}
+@media (max-width:1000px){ .index li{grid-template-columns:auto 1fr auto auto} .index .sw span,.index .r{display:none} .index .p{grid-column:2;grid-row:2;font-size:14px;color:var(--ink-muted)} .index .c{grid-column:2} .index .go{grid-row:1 / span 2} }
+@media (prefers-reduced-motion: reduce){ .index li{transition:none} }
+.titles{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:0 var(--space-8);margin:0;padding:0;list-style:none}
+.titles li{display:grid;grid-template-columns:3ch 1fr auto;gap:var(--space-3);padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px;align-items:baseline;min-width:0}
+.titles .i{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-muted)}
+.titles .s{font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-muted);text-align:right}
+.about{display:grid;grid-template-columns:200px 1fr;gap:var(--space-8);padding-top:var(--space-8)}
+.about p.lead{font-size:20px;line-height:1.45;margin:0 0 var(--space-8);max-width:58ch;font-weight:500}
+.caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-8)}
+.caps ul{list-style:none;margin:var(--space-3) 0 0;padding:0;display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:var(--space-3)}
+.press{display:flex;flex-wrap:wrap;gap:var(--space-2) var(--space-8);margin-top:var(--space-3);font-weight:800;font-size:clamp(22px,2.4vw,34px);letter-spacing:-.02em;text-transform:uppercase;line-height:1.05}
+.contact{overflow:hidden;padding-block:var(--space-12) var(--space-8)}
+.contact .big{font-weight:800;font-size:clamp(64px,13vw,200px);line-height:.82;letter-spacing:-.045em;text-transform:uppercase;margin:0;white-space:nowrap}
+.contact .big span{display:block}
+.contact .big span:nth-child(2){padding-left:8vw}
+.contact-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:var(--space-8);margin-top:var(--space-8);border-top:1px solid var(--rule);padding-top:var(--space-4)}
+.links{display:flex;flex-direction:column;gap:4px}
+.links a{font-family:var(--font-mono);font-size:12.5px;text-decoration:none;color:var(--ink)}
+.links a:hover{color:var(--signal-text)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-4);padding-block:var(--space-6) var(--space-12);border-top:3px solid var(--rule)}
+
+@media (max-width: 860px){
+  .head{grid-template-columns:1fr auto}
+  .head nav{display:none}
+  .hero{display:flex;flex-direction:column;min-height:0;padding-block:var(--space-6) 0}
+  .bg{position:relative;inset:auto;height:min(108vw,560px);order:2;margin-inline:calc(-1 * max(16px, env(safe-area-inset-left, 0px)))}
+  .poster span{font-size:24cqw}
+  .tl{order:1;max-width:none}
+  .tr,.bl,.br{order:3;width:auto;justify-self:auto;align-self:auto;text-align:left;max-width:none}
+  .bl{order:3;margin-top:var(--space-4)}
+  .tr{order:4;margin-top:var(--space-6)}
+  .br{order:5;margin-block:var(--space-6)}
+  .credits{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)}
+  .band .wrap{grid-template-columns:1fr;gap:0}
+  .box-head{grid-template-columns:1fr auto}
+  .box-head > .lbl{display:none}
+  .box-head > *:nth-child(2){padding-left:0;border-left:0}
+  .about{grid-template-columns:1fr}
+  .about > .meta{display:none}
+}
+@media (prefers-reduced-motion: reduce){ .cart{transition:none} .poster.swap span{animation:none} }
+</style>
+</head>
+<body>
+
+<div class="grain" id="grain" aria-hidden="true"></div>
+
+<div class="wrap">
+  <header class="head">
+    <a class="who" href="#work" aria-label="Angel Garcia, top of page">
+      <img class="mark" src="data:image/png;base64,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" width="44" height="44" alt="">
+      <span>Angel Garcia<br>Creative Director</span>
+    </a>
+    <nav aria-label="Sections"><a href="#index">Work</a><a href="#credits-section">Credits</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <main>
+    <section class="hero" id="work" aria-label="Selected work">
+      <div class="bg">
+        <div class="poster" id="poster" aria-hidden="true"><span>Angel</span><span>Garcia</span></div>
+        <div id="stage" aria-label="3D model of the handheld. Drag to turn it. The D-pad and face buttons can be clicked."></div>
+      </div>
+
+      <div class="ov tl">
+        <div class="meta">Portfolio<br>Release <b id="release">2026.10</b></div>
+        <p id="intro">Brand and marketing creative for games, tech and entertainment. Pick a cartridge to load the work.</p>
+      </div>
+      <div class="ov tr"><dl class="credits" id="credits"></dl></div>
+      <div class="ov bl" id="bl"></div>
+      <div class="ov br">
+        <div class="meta" id="status"></div>
+        <div class="meta" style="margin-top:6px" id="place">Los Angeles, CA<br>34° 03' 08" N 118° 14' 37" W</div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="band" aria-label="Cartridge shelf">
+  <div class="wrap">
+    <div>
+      <p class="ins">Insert<br>cartridge</p>
+      <div class="meta" id="bandmeta">07 carts · newest first<br><kbd>←</kbd> <kbd>→</kbd> pick · <kbd>Enter</kbd> load · <kbd>Esc</kbd> eject</div>
+    </div>
+    <div class="shelf3d" id="shelf3d"><canvas id="shelfCanvas" aria-hidden="true"></canvas><ul class="shelf" id="shelf" aria-label="Cartridges"></ul></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="box" id="index">
+    <div class="box-head"><span class="meta lbl">Index</span><h3>Selected work</h3><span class="n" id="workcount">07</span></div>
+    <ol class="index" id="indexlist"></ol>
+  </section>
+
+  <section class="box" id="credits-section">
+    <div class="box-head"><span class="meta lbl">Shipped</span><h3>Games launched</h3><span class="n" id="gamecount">18</span></div>
+    <ol class="titles" id="titles"></ol>
+  </section>
+
+  <section class="box" id="about">
+    <div class="box-head"><span class="meta lbl">Capabilities</span><h3>What I do</h3><span class="n" id="years">15+</span></div>
+    <div class="about">
+      <div class="meta">Years in the work<br>Games · tech · entertainment</div>
+      <div>
+        <p class="lead" id="aboutLead">I lead multidisciplinary teams with a strategic, conceptual approach to creative that builds consumer engagement and brand equity. Previously at Meta, Naughty Dog and Activision; consulting through Levelwerk.</p>
+        <div class="caps" id="caps">
+          <div><span class="meta">Direction</span><ul><li>Creative direction</li><li>Brand development</li><li>Concept development</li><li>Brand identity</li><li>Integrated marketing</li><li>Livestream assets</li></ul></div>
+          <div><span class="meta">Craft</span><ul><li>Illustration</li><li>Photography</li><li>Typography</li><li>3D product concepts</li></ul></div>
+          <div><span class="meta">Tools</span><ul style="font-family:var(--font-mono);font-size:13px"><li>Adobe Creative Cloud</li><li>Unreal Engine</li><li>Unity</li><li>Blender · MOI3D</li></ul></div>
+        </div>
+        <div style="margin-top:var(--space-12)">
+          <span class="meta">Work featured in</span>
+          <div class="press" id="press"><span>ESPN The Magazine</span><span>Game Informer</span><span>Edge</span><span>Fortune</span><span>Forbes</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <span class="meta led on" id="contactStatus">Open to select projects</span>
+    <p class="big" aria-label="Let's work together"><span>Let's work</span><span>together</span></p>
+    <div class="contact-row">
+      <a class="btn signal" id="cta" href="https://www.linkedin.com/in/angelgarciacreative/" target="_blank" rel="noopener">Message on LinkedIn</a>
+      <div class="links" id="links">
+        <span class="meta">Elsewhere</span>
+        <a href="https://www.linkedin.com/in/angelgarciacreative/" target="_blank" rel="noopener">linkedin.com/in/angelgarciacreative</a>
+        <a href="https://www.instagram.com/angelgrphx/" target="_blank" rel="noopener">instagram.com/angelgrphx</a>
+        <a href="https://twitter.com/ArtsbyAngel" target="_blank" rel="noopener">x.com/ArtsbyAngel</a>
+      </div>
+    </div>
+  </section>
+</div>
+<footer><div class="wrap"><span class="meta">© 2026 Angel Garcia · Levelwerk LLC</span><span class="meta">Los Angeles, CA</span></div></footer>
+
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+/* ===== CARTRIDGES — edit to add or reorder work. edition: acid | blaze | blue | clear | smoke ===== */
+const ED = {
+  acid:{name:"Acid",   hex:"#b3ff00", tx:"#0e0f10"},
+  blaze:{name:"Blaze", hex:"#ff4d00", tx:"#0e0f10"},
+  blue:{name:"System Blue", hex:"#1f24ff", tx:"#ffffff"},
+  clear:{name:"Clear", hex:"#e8eef0", tx:"#0e0f10"},
+  smoke:{name:"Smoke", hex:"#3a3d42", tx:"#ffffff"},
+};
+// Content lives in content/projects.json and content/site.json (edited in the CMS at app.pagescms.org).
+const [PROJECTS, SITE] = await Promise.all(['content/projects.json','content/site.json'].map(u=>fetch(u,{cache:'no-cache'}).then(r=>r.json())));
+const CARTS = PROJECTS.filter(p=>p.published!==false).map(p=>({ slug:p.slug, client:p.client, label:p.cartridge_label||'', cover:p.cover||'', title:p.title, edition:ED[p.edition]?p.edition:'clear',
+  screen:(p.screen_tag||p.title||'').toUpperCase(), poster:[p.poster_line_1||p.client, p.poster_line_2||''],
+  facts:(p.facts||[]).map(f=>[f.label,f.value]), summary:p.summary||'', url:'/work/'+p.slug }));
+const TITLES = (SITE.games||[]).map(g=>[g.title,g.studio]);
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const T = ms => reduce ? ms*0.3 : ms;
+const pad = n => String(n).padStart(2,'0');
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $=id=>document.getElementById(id);
+$('intro').textContent=SITE.intro; $('release').textContent=SITE.release;
+$('place').innerHTML=esc(SITE.place)+'<br>'+esc(SITE.coordinates);
+$('years').textContent=SITE.years+' yrs'; $('aboutLead').textContent=SITE.about;
+$('caps').innerHTML=(SITE.capabilities||[]).map(c=>`<div><span class="meta">${esc(c.heading)}</span><ul>${(c.items||[]).map(i=>`<li>${esc(i)}</li>`).join('')}</ul></div>`).join('');
+$('press').innerHTML=(SITE.press||[]).map(p=>`<span>${esc(p)}</span>`).join('');
+$('contactStatus').textContent=SITE.status; $('cta').textContent=SITE.contact_label; $('cta').href=SITE.contact_url;
+$('links').innerHTML='<span class="meta">Elsewhere</span>'+(SITE.email?`<a href="mailto:${esc(SITE.email)}">${esc(SITE.email)}</a>`:'')+(SITE.links||[]).map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join('');
+$('gamecount').textContent=TITLES.length; $('workcount').textContent=pad(CARTS.length);
+document.getElementById('titles').innerHTML = TITLES.map((t,i)=>`<li><span class="i">${pad(i+1)}</span><span>${esc(t[0])}</span><span class="s">${esc(t[1])}</span></li>`).join('');
+
+/* ---------- work index ---------- */
+$('indexlist').innerHTML=CARTS.map((c,i)=>`<li data-i="${i}"><span class="r sw"><i style="background:${ED[c.edition].hex}"></i><span>${pad(i+1)} · ${ED[c.edition].name}</span></span><span class="c">${esc(c.client)}</span><span class="p">${esc(c.title)}</span><span class="r">${esc((c.facts[0]||['',''])[1])}</span><a class="go" href="${c.url}">Case study</a><button class="go" type="button" aria-label="Load ${esc(c.client)}">Load</button></li>`).join('');
+$('indexlist').addEventListener('click',e=>{ if(e.target.closest('a')) return; const li=e.target.closest('li'); if(!li) return; const i=+li.dataset.i; select(i,true);
+  $('work').scrollIntoView({behavior:reduce?'auto':'smooth'}); setTimeout(()=>loadCart(i), reduce?0:450); });
+
+/* ---------- DOM ---------- */
+const shelfEl=document.getElementById('shelf'), posterEl=document.getElementById('poster');
+let selected=0, loaded=null, busy=false, selectFlash=0;
+document.getElementById('bandmeta').firstChild.textContent=`${pad(CARTS.length)} carts · newest first`;
+CARTS.forEach((c,i)=>{
+  const e=ED[c.edition], li=document.createElement('li'), b=document.createElement('button');
+  b.className='cart'; b.id='cart-'+i; b.style.setProperty('--ed',e.hex); b.style.setProperty('--edtx',e.tx);
+  b.setAttribute('aria-label',`Load ${c.client}: ${c.title}`);
+  b.innerHTML=`<span class="no">CART/${pad(i+1)}</span><span class="nm">${esc(c.label||c.client)}</span><span class="ed">${e.name} ed.</span>`;
+  b.addEventListener('click',()=>{ select(i,false); loadCart(i); });
+  b.addEventListener('pointerenter',()=>{ shelfHover=i; }); b.addEventListener('pointerleave',()=>{ if(shelfHover===i) shelfHover=-1; });
+  b.addEventListener('focus',()=>{ shelfHover=i; }); b.addEventListener('blur',()=>{ if(shelfHover===i) shelfHover=-1; });
+  li.appendChild(b); shelfEl.appendChild(li);
+});
+function renderShelf(){ CARTS.forEach((c,i)=>{ const b=document.getElementById('cart-'+i); b.setAttribute('aria-current',i===selected?'true':'false'); b.classList.toggle('in',i===loaded); }); }
+function setPoster(lines){
+  posterEl.classList.remove('swap'); void posterEl.offsetWidth;
+  posterEl.innerHTML=lines.map(l=>`<span>${esc(l)}</span>`).join(''); posterEl.classList.add('swap');
+}
+function renderInfo(){
+  const cr=document.getElementById('credits'), bl=document.getElementById('bl'), st=document.getElementById('status');
+  if(loaded===null){
+    cr.innerHTML=[["Direction","Angel Garcia"],["Now",SITE.now],["Previously",SITE.previously],["Experience",SITE.years+" years"]].map(f=>`<div><dt>${f[0]}</dt><dd>${esc(f[1])}</dd></div>`).join('');
+    bl.innerHTML=`<p class="cartno">NO CART</p><p class="cartsub">Insert a cartridge.</p><p class="sum">${CARTS.length} cartridges on the shelf below, newest first. Or use the D-pad and press A.</p>`;
+    st.innerHTML=`<span class="led">Standby</span>`;
+    return;
+  }
+  const c=CARTS[loaded];
+  cr.innerHTML=[["Client",c.client],...c.facts].slice(0,3).map(f=>`<div><dt>${esc(f[0])}</dt><dd>${esc(f[1])}</dd></div>`).join('');
+  bl.innerHTML=`<p class="cartno">CART/${pad(loaded+1)}</p><p class="cartsub">${esc(c.title)}</p><p class="sum">${esc(c.summary)}</p>
+    <div class="btns"><a class="btn solid" href="${c.url}">View case study</a><button class="btn" type="button" id="ejectBtn">Eject</button></div>`;
+  document.getElementById('ejectBtn').addEventListener('click',eject);
+  st.innerHTML=`<span class="led on">Now playing · ${pad(loaded+1)}/${pad(CARTS.length)}</span>`;
+}
+function select(i,scroll=true){
+  selected=(i+CARTS.length)%CARTS.length; selectFlash=performance.now(); renderShelf();
+  if(scroll){ const b=document.getElementById('cart-'+selected); shelfEl.scrollTo({left:b.offsetLeft-shelfEl.clientWidth/2+b.offsetWidth/2,behavior:reduce?'auto':'smooth'}); }
+}
+
+/* ---------- three ---------- */
+const stage=document.getElementById('stage');
+const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.VSMShadowMap;
+renderer.toneMapping=THREE.AgXToneMapping??THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.3;
+stage.appendChild(renderer.domElement);
+const scene=new THREE.Scene();
+const pmrem=new THREE.PMREMGenerator(renderer);
+// Studio lighting: a real HDRI (Poly Haven "Studio Small 03", CC0) published next to the page; a generated room until it loads or if it can't.
+scene.environment=pmrem.fromScene(new RoomEnvironment(renderer),0.04).texture;
+const onHDR=[];
+import('/studio-hdr.js').then(m=>{ const bin=atob(m.default), buf=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++) buf[i]=bin.charCodeAt(i);
+  const loader=new RGBELoader(), d=loader.parse(buf.buffer), tex=new THREE.DataTexture(d.data,d.width,d.height,THREE.RGBAFormat,d.type);
+  tex.mapping=THREE.EquirectangularReflectionMapping; tex.colorSpace=THREE.LinearSRGBColorSpace; tex.minFilter=tex.magFilter=THREE.LinearFilter; tex.generateMipmaps=false; tex.flipY=true; tex.needsUpdate=true;
+  scene.environment=pmrem.fromEquirectangular(tex).texture; onHDR.forEach(f=>{ try{ f(tex); }catch(e){} }); tex.dispose(); }).catch(()=>{});
+const camera=new THREE.PerspectiveCamera(26,1,0.1,100);
+// One overhead key that casts the floor shadow; the HDRI does the rest.
+const key=new THREE.DirectionalLight(0xffffff,1.4); key.position.set(-0.6,10,1.6); key.castShadow=true;
+key.shadow.mapSize.set(1024,1024); key.shadow.radius=26; key.shadow.blurSamples=32; key.shadow.bias=-0.0004;
+Object.assign(key.shadow.camera,{left:-5,right:5,top:5,bottom:-5,near:1,far:20}); scene.add(key);
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(14,14),new THREE.ShadowMaterial({color:0x14161a,opacity:.26}));
+floor.rotation.x=-Math.PI/2; floor.position.y=-3.05; floor.receiveShadow=true; scene.add(floor);
+
+function rrect(w,h,r){ const s=new THREE.Shape(),x=-w/2,y=-h/2;
+  s.moveTo(x+r,y);s.lineTo(x+w-r,y);s.quadraticCurveTo(x+w,y,x+w,y+r);s.lineTo(x+w,y+h-r);s.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  s.lineTo(x+r,y+h);s.quadraticCurveTo(x,y+h,x,y+h-r);s.lineTo(x,y+r);s.quadraticCurveTo(x,y,x+r,y);return s; }
+function ctex(w,h,draw,nearest){ const cv=document.createElement('canvas');cv.width=w;cv.height=h;const ctx=cv.getContext('2d',{willReadFrequently:!!nearest});draw(ctx,w,h);
+  const t=new THREE.CanvasTexture(cv);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=8;
+  if(nearest){t.magFilter=THREE.NearestFilter;t.minFilter=THREE.NearestFilter;t.generateMipmaps=false}
+  t.userData={cv,ctx,draw};return t; }
+
+const root=new THREE.Group(); scene.add(root);
+const device=new THREE.Group(); root.add(device);
+const W=3.6,H=4.5,D=0.56,BV=0.11,F=D/2+BV;
+const bodyGeo=new THREE.ExtrudeGeometry(rrect(W-2*BV,H-2*BV,0.16),{depth:D,bevelEnabled:true,bevelThickness:BV,bevelSize:BV,bevelSegments:4,curveSegments:24});
+bodyGeo.translate(0,0,-D/2);
+// bead-blasted anodized alloy: fine noise in the roughness, a thin clear coat on top
+const grit=ctex(256,256,(g,w,h)=>{ const d=g.createImageData(w,h); for(let i=0;i<d.data.length;i+=4){ const v=225+Math.random()*30; d.data[i]=d.data[i+1]=d.data[i+2]=v; d.data[i+3]=255; } g.putImageData(d,0,0); });
+grit.colorSpace=THREE.NoColorSpace; grit.wrapS=grit.wrapT=THREE.RepeatWrapping; grit.repeat.set(3,3);
+const alloyMat=new THREE.MeshPhysicalMaterial({color:0xd2cfc9,metalness:.5,roughness:.5,roughnessMap:grit,clearcoat:.35,clearcoatRoughness:.28,envMapIntensity:1.0});
+const body=new THREE.Mesh(bodyGeo,alloyMat); body.castShadow=true; device.add(body);
+
+const PX=1024/W;
+const face=ctex(1024,Math.round(H*PX),(g,w,h)=>{
+  const px=x=>(x+W/2)*PX, py=y=>(H/2-y)*PX;
+  g.clearRect(0,0,w,h); g.textAlign='left';
+  g.fillStyle='#ff4d00'; g.fillRect(px(1.22),py(-0.47)-11,60,7);
+  g.fillStyle='#4a4b4d'; g.font='500 16px "JetBrains Mono"'; g.fillText('CREATIVE SYSTEM',px(-1.44),py(-0.47));
+  g.font='500 15px "JetBrains Mono"';
+  g.textAlign='center'; g.fillText('SELECT',px(-0.3),py(-1.7)); g.fillText('START',px(0.3),py(-1.7));
+  g.fillStyle='#262729';
+  for(let r=0;r<4;r++)for(let c=0;c<6;c++){ g.beginPath(); g.arc(px(-1.5+c*0.085),py(-1.7-r*0.085),5,0,7); g.fill(); }
+  g.fillRect(px(1.28),py(-1.93),46,6);
+});
+const faceMesh=new THREE.Mesh(new THREE.PlaneGeometry(W,H),new THREE.MeshStandardMaterial({map:face,transparent:true,roughness:.52,metalness:.2}));
+faceMesh.position.z=F+0.001; device.add(faceMesh);
+
+const bezel=new THREE.Mesh(new THREE.ExtrudeGeometry(rrect(2.88,2.24,0.08),{depth:0.01,bevelEnabled:false}),new THREE.MeshStandardMaterial({color:0x101012,roughness:.35,metalness:.1,envMapIntensity:.25}));
+bezel.position.set(0,0.88,F); device.add(bezel);
+const SW=320,SH=240;
+const lcd=ctex(SW,SH,()=>{},true), g2=lcd.userData.ctx;
+const lcdMesh=new THREE.Mesh(new THREE.PlaneGeometry(2.6,1.95),new THREE.MeshBasicMaterial({map:lcd,toneMapped:false}));
+lcdMesh.position.set(0,0.88,F+0.012); device.add(lcdMesh);
+// screen glow: a blurred copy of the live screen, added over the glass and spilling onto the bezel
+const GW=176, GH=132, glowSmall=document.createElement('canvas'); glowSmall.width=44; glowSmall.height=33;
+const gs=glowSmall.getContext('2d');
+const glow=ctex(GW,GH,()=>{}); glow.colorSpace=THREE.SRGBColorSpace;
+const glowMat=new THREE.MeshBasicMaterial({map:glow,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false,toneMapped:false,opacity:.42});
+const glowMesh=new THREE.Mesh(new THREE.PlaneGeometry(2.94,2.2),glowMat);
+glowMesh.position.set(0,0.88,F+0.014); device.add(glowMesh);
+function updateGlow(src){
+  gs.imageSmoothingEnabled=true; gs.clearRect(0,0,44,33); gs.drawImage(src,5,4,34,25);
+  const g=glow.userData.ctx; g.imageSmoothingEnabled=true; g.imageSmoothingQuality='high';
+  g.globalCompositeOperation='source-over'; g.fillStyle='#000'; g.fillRect(0,0,GW,GH);
+  g.drawImage(glowSmall,0,0,GW,GH);
+  g.globalCompositeOperation='lighter'; g.globalAlpha=.35; g.drawImage(glowSmall,-6,-4,GW+12,GH+8); g.globalAlpha=1;
+  g.globalCompositeOperation='source-over'; glow.needsUpdate=true;
+}
+// cover glass: reflections only, added on top of the lit screen
+const sheen=new THREE.Mesh(new THREE.PlaneGeometry(2.88,2.24),new THREE.MeshStandardMaterial({color:0x000000,roughness:.06,metalness:1,envMapIntensity:.55,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
+sheen.position.set(0,0.88,F+0.016); device.add(sheen);
+
+const pressables=[];
+function btn(mesh,action,depth){ mesh.userData={action,baseZ:mesh.position.z,depth,press:0}; pressables.push(mesh); device.add(mesh); }
+const black=new THREE.MeshPhysicalMaterial({color:0x16171a,roughness:.42,metalness:0,clearcoat:.25,clearcoatRoughness:.4,envMapIntensity:.8});
+const hitMat=new THREE.MeshBasicMaterial({transparent:true,opacity:0,depthWrite:false});
+const dc={x:-1.0,y:-1.03}, a=0.24, armGeo=new THREE.BoxGeometry(a,a,0.13);
+// one molded cross with rounded edges; invisible arms take the clicks
+const crossShape=(()=>{ const t=a*1.5, q=a/2, r=0.04, s=new THREE.Shape();
+  const pts=[[-q,t],[q,t],[q,q],[t,q],[t,-q],[q,-q],[q,-t],[-q,-t],[-q,-q],[-t,-q],[-t,q],[-q,q]];
+  s.moveTo(pts[0][0],pts[0][1]); pts.slice(1).forEach(p=>s.lineTo(p[0],p[1])); s.closePath(); return s; })();
+const crossGeo=new THREE.ExtrudeGeometry(crossShape,{depth:0.07,bevelEnabled:true,bevelThickness:.03,bevelSize:.025,bevelSegments:4});
+const cross=new THREE.Mesh(crossGeo,black); cross.position.set(dc.x,dc.y,F+0.01); cross.castShadow=true; device.add(cross);
+[['left',-1,0],['right',1,0],['up',0,1],['down',0,-1]].forEach(([n,x,y])=>{ const m=new THREE.Mesh(armGeo,hitMat); m.position.set(dc.x+x*a,dc.y+y*a,F+0.05); btn(m,n,0.035); });
+// domed face buttons
+const fbGeo=new THREE.LatheGeometry([[0,0],[0.172,0],[0.172,0.07],[0.165,0.095],[0.14,0.11],[0.08,0.117],[0,0.118]].map(p=>new THREE.Vector2(p[0],p[1])),48); fbGeo.rotateX(Math.PI/2);
+const greyKey=black; // face buttons and SELECT / START share the cross pad's material
+const fc={x:1.0,y:-1.03}, o=0.32;
+[['y',0,1],['a',1,0],['b',0,-1],['x',-1,0]].forEach(([n,x,y])=>{ const m=new THREE.Mesh(fbGeo,greyKey); m.position.set(fc.x+x*o,fc.y+y*o,F-0.005); m.castShadow=true; btn(m,n,0.04); });
+const pillGeo=new THREE.CapsuleGeometry(0.055,0.22,6,20); pillGeo.rotateZ(Math.PI/2);
+const pSel=new THREE.Mesh(pillGeo,greyKey); pSel.position.set(-0.3,-1.88,F+0.03); btn(pSel,'select',0.025);
+const pSt=new THREE.Mesh(pillGeo,greyKey); pSt.position.set(0.3,-1.88,F+0.03); btn(pSt,'start',0.025);
+const shGeo=new THREE.BoxGeometry(0.62,0.1,0.32);
+[-1,1].forEach(s=>{ const m=new THREE.Mesh(shGeo,black); m.position.set(s*1.38,H/2+0.03,-0.08); device.add(m); });
+const slot=new THREE.Mesh(new THREE.BoxGeometry(1.41,0.03,0.24),new THREE.MeshStandardMaterial({color:0x0c0c0d}));
+slot.position.set(0,H/2+0.012,-0.08); device.add(slot);
+
+const shMats=[new THREE.MeshBasicMaterial({transparent:true,depthWrite:false}),new THREE.MeshBasicMaterial({transparent:true,depthWrite:false})];
+function paintShadow(){ const rgb=getComputedStyle(document.documentElement).getPropertyValue('--floor').trim()||'20,22,24';
+  [.2,.12].forEach((a,i)=>{ shMats[i].map=ctex(256,256,(g,w,h)=>{ const gr=g.createRadialGradient(w/2,h/2,0,w/2,h/2,w/2); gr.addColorStop(0,`rgba(${rgb},${a})`); gr.addColorStop(1,`rgba(${rgb},0)`); g.fillStyle=gr; g.fillRect(0,0,w,h); }); shMats[i].needsUpdate=true; }); }
+paintShadow();
+const shTight=new THREE.Mesh(new THREE.PlaneGeometry(3.4,0.8),shMats[0]), shWide=new THREE.Mesh(new THREE.PlaneGeometry(6.4,1.9),shMats[1]);
+[shTight,shWide].forEach(m=>{ m.rotation.x=-Math.PI/2; m.position.y=-2.95; scene.add(m); });
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',paintShadow);
+new MutationObserver(paintShadow).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+
+/* ---------- translucent cartridge: portrait with a clipped top-right corner, like a memory card ---------- */
+const CW=1.25,CH=1.6,CD=0.16,CHAMF=0.24;
+function cartShape(w,h,c,r){ const sh=new THREE.Shape(), x=-w/2, y=-h/2;
+  sh.moveTo(x+r,y); sh.lineTo(x+w-r,y); sh.quadraticCurveTo(x+w,y,x+w,y+r); sh.lineTo(x+w,y+h-c); sh.lineTo(x+w-c,y+h);
+  sh.lineTo(x+r,y+h); sh.quadraticCurveTo(x,y+h,x,y+h-r); sh.lineTo(x,y+r); sh.quadraticCurveTo(x,y,x+r,y); return sh; }
+const cartGeo=new THREE.ExtrudeGeometry(cartShape(CW-0.05,CH-0.05,CHAMF,0.06),{depth:CD-0.05,bevelEnabled:true,bevelThickness:.025,bevelSize:.025,bevelSegments:3,curveSegments:8});
+cartGeo.translate(0,0,-(CD-0.05)/2); cartGeo.rotateZ(Math.PI); // contact end + clipped corner at the bottom: the end that goes into the handheld
+const LW=CW-0.15, LH=CH-0.17;
+const labelGeo=(()=>{ const g=new THREE.ShapeGeometry(cartShape(LW,LH,CHAMF-0.035,0.035),8); g.rotateZ(Math.PI);
+  const pos=g.attributes.position, uv=g.attributes.uv; for(let k=0;k<pos.count;k++){ uv.setXY(k,(pos.getX(k)+LW/2)/LW,(pos.getY(k)+LH/2)/LH); } uv.needsUpdate=true; return g; })();
+const goldMat=new THREE.MeshStandardMaterial({color:0xc9982e,metalness:1,roughness:.32});
+const lockMat=new THREE.MeshStandardMaterial({color:0xff4d00,roughness:.45});
+const markImg=(()=>{ const el=document.querySelector('.head .mark, .who .mark'); if(!el) return null; const im=new Image(); im.src=el.src; return im; })();
+function fitLines(g,text,maxW,size,minSize,maxLines){ let fs=size, lines;
+  for(;;){ g.font=`800 ${fs}px Archivo`; lines=[]; let l=''; for(const wd of text.split(' ')){ const t=l?l+' '+wd:wd; if(g.measureText(t).width>maxW&&l){lines.push(l);l=wd}else l=t; } if(l)lines.push(l);
+    if((lines.length<=maxLines && lines.every(x=>g.measureText(x).width<=maxW)) || fs<=minSize) return {lines,fs}; fs-=2; } }
+function makeCart(i){
+  const c=CARTS[i], e=ED[c.edition], gp=new THREE.Group(), num=pad(i+1), name=(c.label||c.client);
+  const shell=new THREE.MeshPhysicalMaterial({color:new THREE.Color(e.hex),roughness:.2,metalness:0,transmission:.82,thickness:.2,ior:1.46,clearcoat:.8,clearcoatRoughness:.15,attenuationColor:new THREE.Color(e.hex),attenuationDistance:.5,envMapIntensity:.9});
+  const sm=new THREE.Mesh(cartGeo,shell); sm.castShadow=true; gp.add(sm);
+  // the board inside, seen through the shell
+  const board=new THREE.Mesh(new THREE.BoxGeometry(0.86,1.0,0.02),new THREE.MeshStandardMaterial({color:0x1b2a1e,roughness:.7})); board.position.set(-0.04,0.0,0); gp.add(board);
+  const chip=new THREE.Mesh(new THREE.BoxGeometry(0.42,0.42,0.03),new THREE.MeshStandardMaterial({color:0x0c0c0d,roughness:.5})); chip.position.set(-0.06,-0.12,0.01); gp.add(chip);
+  // gold contacts along the top of the back, the first one short, like a memory card
+  for(let k=0;k<8;k++){ const tall=k===0?0.12:0.2; const ct=new THREE.Mesh(new THREE.BoxGeometry(0.075,tall,0.01),goldMat); ct.position.set(-CW/2+0.14+k*0.105, -CH/2+0.2+(0.2-tall)/2+(k===0?0.06:0), -CD/2-0.004); gp.add(ct); }
+  // orange lock switch on the left edge
+  const lock=new THREE.Mesh(new THREE.BoxGeometry(0.035,0.16,0.07),lockMat); lock.position.set(CW/2+0.004,-0.3,0); gp.add(lock);
+  // front sticker: art window + label block
+  let cover=null;
+  const t=ctex(400,520,(g,w,h)=>{
+    g.clearRect(0,0,w,h);
+    g.fillStyle='#141517'; g.fillRect(0,0,w,h);
+    g.fillStyle='#8e9196'; g.font='500 15px "JetBrains Mono"'; g.fillText('▸ CART/'+num,16,24); g.textAlign='right'; g.fillText(e.name.toUpperCase()+' ED.',w-16,24); g.textAlign='left';
+    const ax=14, ay=36, aw=w-28, ah=286;
+    g.save(); g.beginPath(); g.rect(ax,ay,aw,ah); g.clip();
+    if(cover && cover.complete && cover.naturalWidth){ const sc=Math.max(aw/cover.naturalWidth,ah/cover.naturalHeight); const dw=cover.naturalWidth*sc, dh=cover.naturalHeight*sc; g.drawImage(cover,ax+(aw-dw)/2,ay+(ah-dh)/2,dw,dh); }
+    else {
+      g.fillStyle=e.hex; g.fillRect(ax,ay,aw,ah);
+      g.globalAlpha=.16; g.fillStyle=e.tx; for(let yy=ay;yy<ay+ah;yy+=6) for(let xx=ax+((yy/6)%2)*3;xx<ax+aw;xx+=6){ g.beginPath(); g.arc(xx,yy,1.3,0,7); g.fill(); } g.globalAlpha=1;
+      g.fillStyle=e.tx; g.font='800 150px Archivo'; g.letterSpacing='-6px';
+      const w1=(c.poster&&c.poster[0])||name; g.fillText(String(w1).toUpperCase(),ax-6,ay+ah-24); g.letterSpacing='0px';
+      g.strokeStyle=e.tx; g.globalAlpha=.6; g.lineWidth=2; const cx=ax+aw-56, cy=ay+28; g.strokeRect(cx,cy,40,22); g.globalAlpha=1;
+    }
+    g.restore();
+    g.strokeStyle='#2c2e32'; g.lineWidth=2; g.strokeRect(ax+1,ay+1,aw-2,ah-2);
+    g.fillStyle='#8e9196'; g.font='500 14px "JetBrains Mono"'; g.fillText((c.label? c.client.toUpperCase()+' · ':'')+'NO.'+num, 16, ay+ah+26);
+    g.fillStyle='#eceeee'; const f=fitLines(g,name.toUpperCase(),w-32,46,26,2); g.font=`800 ${f.fs}px Archivo`;
+    f.lines.forEach((ln,k)=>g.fillText(ln,14,ay+ah+28+f.fs*.95*(k+1)));
+    g.fillStyle='#8e9196'; g.font='400 15px Archivo'; const tl=(c.title||'').length>44?c.title.slice(0,43)+'…':(c.title||''); g.textAlign='right'; g.fillText(tl,w-16,h-16,w-110); g.textAlign='left';
+  });
+  if(c.cover){ cover=new Image(); cover.onload=()=>{ const {ctx,cv,draw}=t.userData; draw(ctx,cv.width,cv.height); t.needsUpdate=true; }; cover.src=c.cover; }
+  const lab=new THREE.Mesh(labelGeo,new THREE.MeshStandardMaterial({map:t,roughness:.55,metalness:0,transparent:true}));
+  lab.position.set(0,0,CD/2+0.004); gp.add(lab);
+  // back: embossed mark
+  const bt=ctex(256,256,(g,w,h)=>{ g.clearRect(0,0,w,h); if(markImg&&markImg.complete){ g.globalAlpha=.22; g.drawImage(markImg,48,48,160,160); g.globalAlpha=1; }
+    g.fillStyle='rgba(255,255,255,.28)'; g.font='500 13px "JetBrains Mono"'; g.textAlign='center'; g.fillText('★ ★ ★        ★ ★ ★',w/2,h-12); });
+  if(markImg && !markImg.complete) markImg.addEventListener('load',()=>{ const {ctx,cv,draw}=bt.userData; draw(ctx,cv.width,cv.height); bt.needsUpdate=true; },{once:true});
+  const back=new THREE.Mesh(new THREE.PlaneGeometry(0.95,0.95),new THREE.MeshBasicMaterial({map:bt,transparent:true,depthWrite:false})); back.rotation.y=Math.PI; back.position.set(0,0.18,-CD/2-0.003); gp.add(back);
+  return gp;
+}
+const CART_Y=H/2+CH/2-0.7, CART_Z=-0.08;
+let cartMesh=null;
+
+/* ---------- 3D cartridge shelf: the same model as the handheld's cartridge, standing on the acid band ---------- */
+var shelfHover=-1;
+const shelfWrap=document.getElementById('shelf3d'), shelfCv=document.getElementById('shelfCanvas');
+let shelf3d=null, shelfVisible=true;
+try {
+  const r2=new THREE.WebGLRenderer({canvas:shelfCv,antialias:true,alpha:false});
+  r2.setPixelRatio(Math.min(devicePixelRatio,2)); r2.outputColorSpace=THREE.SRGBColorSpace;
+  r2.toneMapping=THREE.AgXToneMapping??THREE.ACESFilmicToneMapping; r2.toneMappingExposure=1.25;
+  const acidHex=(getComputedStyle(document.documentElement).getPropertyValue('--acid').trim()||'#b3ff00');
+  r2.setClearColor(new THREE.Color(acidHex),1);
+  const s2=new THREE.Scene(); const p2=new THREE.PMREMGenerator(r2);
+  s2.environment=p2.fromScene(new RoomEnvironment(r2),0.04).texture;
+  onHDR.push(tex=>{ s2.environment=p2.fromEquirectangular(tex).texture; });
+  const k2=new THREE.DirectionalLight(0xffffff,1.0); k2.position.set(-300,500,800); s2.add(k2);
+  const cam2=new THREE.PerspectiveCamera(9,1,1,20000);
+  const shTex=ctex(128,64,(g,w,h)=>{ const gr=g.createRadialGradient(w/2,h/2,0,w/2,h/2,w/2); gr.addColorStop(0,'rgba(20,30,0,.55)'); gr.addColorStop(1,'rgba(20,30,0,0)'); g.setTransform(1,0,0,.5,0,h/4); g.fillStyle=gr; g.fillRect(0,0,w,h*2); });
+  const items=CARTS.map((c,i)=>{ const g=makeCart(i); const holder=new THREE.Group(); holder.add(g); s2.add(holder);
+    const sh=new THREE.Mesh(new THREE.PlaneGeometry(1,1),new THREE.MeshBasicMaterial({map:shTex,transparent:true,depthWrite:false,toneMapped:false})); s2.add(sh);
+    return {holder,g,sh,lift:0,fade:1,turn:0,spin:0,spinT:0,wasHov:false}; });
+  shelf3d={r2,s2,cam2,items,w:0,h:0};
+  new IntersectionObserver(es=>{ shelfVisible=es[0].isIntersecting; }).observe(shelfWrap);
+  document.body.classList.add('shelf3d-on');
+} catch(e) { shelf3d=null; }
+function shelfFrame(now){
+  if(!shelf3d||!shelfVisible) return;
+  const S=shelf3d, W=shelfCv.clientWidth, H=shelfCv.clientHeight; if(!W||!H) return;
+  if(W!==S.w||H!==S.h){ S.w=W; S.h=H; S.r2.setSize(W,H,false); S.cam2.aspect=W/H; S.cam2.position.set(0,0,(H/2)/Math.tan(THREE.MathUtils.degToRad(S.cam2.fov/2))); S.cam2.lookAt(0,0,0); S.cam2.updateProjectionMatrix(); }
+  const cr=shelfCv.getBoundingClientRect(), t=now/1000, dt=Math.min(.1,(now-(S.last||now))/1000); S.last=now;
+  const ease=k=>reduce?1:1-Math.pow(1-k,dt*60);
+  S.items.forEach((it,i)=>{
+    const b=document.getElementById('cart-'+i); if(!b){ it.holder.visible=false; it.sh.visible=false; return; }
+    const r=b.getBoundingClientRect(); const x=r.left+r.width/2-cr.left-W/2, y=H/2-(r.top+r.height/2-cr.top);
+    const isIn=i===loaded, sel=i===selected, hov=i===shelfHover;
+    if(hov&&!it.wasHov&&!reduce) it.spinT+=Math.PI*2; it.wasHov=hov; it.spin+=(it.spinT-it.spin)*ease(.07);
+    const tl=isIn?0:(sel?1:(hov?.65:0)); it.lift+=(tl-it.lift)*ease(.14);
+    const tf=isIn?0:1; it.fade+=(tf-it.fade)*ease(.12);
+    const sc=(r.width/CW)*(.9+.1*it.fade);
+    it.holder.visible=it.fade>.03; it.holder.position.set(x, y+it.lift*12-(1-it.fade)*40, 0); it.holder.scale.setScalar(sc);
+    const sway=reduce?0:Math.sin(t*.7+i*1.3)*.035;
+    it.g.rotation.set(.1-it.lift*.08, -.42*(1-it.lift)+sway+it.spin, -.02*(1-it.lift));
+    it.sh.visible=it.holder.visible; it.sh.position.set(x, y-r.height/2-4, -40); it.sh.scale.set(r.width*1.5, 24, 1);
+    it.sh.material.opacity=(.85-it.lift*.35)*it.fade;
+  });
+  S.r2.render(S.s2,S.cam2);
+}
+
+/* ---------- tweens + state ---------- */
+const tweens=[], E={out:p=>1-Math.pow(1-p,3),inOut:p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2,in:p=>p*p*p};
+const tween=(d,fn,e=E.out)=>new Promise(r=>tweens.push({t0:performance.now(),d:T(d),fn,e,r}));
+let scr='title', scrT=performance.now(), jolt=0;
+async function loadCart(i){
+  if(busy||i===loaded) return; busy=true;
+  if(cartMesh) await ejectAnim();
+  loaded=i; renderShelf(); renderInfo(); setPoster(CARTS[i].poster);
+  const m=makeCart(i); cartMesh=m; device.add(m);
+  scr='static'; scrT=performance.now();
+  await tween(650,p=>{ m.position.set(0,CART_Y+4*(1-p),CART_Z-0.7*(1-p)); m.rotation.set(-0.6*(1-p),0.5*(1-p),0.2*(1-p)); },E.inOut);
+  await tween(150,p=>{ m.position.y=CART_Y+0.07*(1-p); },E.in);
+  jolt=1; scr='boot'; scrT=performance.now(); busy=false;
+}
+async function ejectAnim(){
+  const m=cartMesh; scr='static'; scrT=performance.now();
+  await tween(110,p=>{ m.position.y=CART_Y-0.05*p; });
+  await tween(460,p=>{ m.position.y=CART_Y+3.6*p; m.rotation.x=-0.5*p; m.rotation.z=0.25*p; m.position.z=CART_Z-0.8*p; },E.in);
+  device.remove(m); cartMesh=null;
+}
+async function eject(){ if(busy||loaded===null) return; busy=true; await ejectAnim(); loaded=null; scr='empty'; scrT=performance.now(); renderShelf(); renderInfo(); setPoster(['Angel','Garcia']); busy=false; }
+function act(a){
+  if(a==='left'||a==='up'||a==='x') select(selected-1);
+  else if(a==='right'||a==='down'||a==='y') select(selected+1);
+  else if(a==='a'||a==='start') loadCart(selected);
+  else if(a==='b'||a==='select') eject();
+}
+const press=a=>{ const m=pressables.find(p=>p.userData.action===a); if(m) m.userData.press=1; };
+addEventListener('keydown',e=>{
+  const tag=(e.target.tagName||'').toLowerCase(); if(tag==='input'||tag==='textarea') return;
+  const a={ArrowLeft:'left',ArrowRight:'right',Enter:'a',Escape:'b'}[e.key]; if(!a) return;
+  if(e.key==='Enter'&&(tag==='button'||tag==='a')) return;
+  if(e.key.startsWith('Arrow')){ const r=stage.getBoundingClientRect(); if(r.bottom<0||r.top>innerHeight) return; e.preventDefault(); }
+  press(a); act(a);
+});
+
+/* ---------- LCD: 1-bit OS ---------- */
+const K={bk:'#000000',wh:'#ffffff',bl:'#b3ff00',dim:'#8f8f8f'};
+function txt(g,s,x,y,c,size){ g.fillStyle=c; g.font=(size||8)+'px Silkscreen'; g.fillText(s,x,y); }
+function win(g,x,y,w,h,title){
+  g.fillStyle=K.bk; g.fillRect(x,y,w,h); g.strokeStyle=K.wh; g.lineWidth=1; g.strokeRect(x+.5,y+.5,w-1,h-1);
+  g.fillStyle=K.bl; g.fillRect(x+1,y+1,w-2,12); txt(g,title,x+5,y+10,K.bk);
+  const cx=x+w-12; g.strokeStyle=K.bk; g.strokeRect(cx+.5,y+2.5,9,9); g.beginPath(); g.moveTo(cx+2.5,y+4.5); g.lineTo(cx+7.5,y+9.5); g.moveTo(cx+7.5,y+4.5); g.lineTo(cx+2.5,y+9.5); g.stroke();
+}
+function pbtn(g,x,y,w,label,inv){ g.strokeStyle=K.wh; g.strokeRect(x+.5,y+.5,w-1,13); if(inv){g.fillStyle=K.wh; g.fillRect(x+2,y+2,w-4,10);} g.textAlign='center'; txt(g,label,x+w/2,y+10,inv?K.bk:K.wh); g.textAlign='left'; }
+function bar(g,x,y,w,p){ g.strokeStyle=K.wh; g.strokeRect(x+.5,y+.5,w-1,10); const n=Math.floor((w-4)/6), on=Math.floor(n*p); g.fillStyle=K.bl; for(let i=0;i<on;i++) g.fillRect(x+3+i*6,y+3,4,5); }
+function wrapT(g,s,x,y,w,lh,max,c){ g.fillStyle=c; g.font='8px Silkscreen'; const out=[];let l=''; for(const wd of s.split(' ')){ const t=l?l+' '+wd:wd; if(g.measureText(t).width>w&&l){out.push(l);l=wd}else l=t;} if(l)out.push(l); out.slice(0,max).forEach(z=>{g.fillText(z,x,y);y+=lh}); return y; }
+let glowFrame=0, _tm=null;
+function tintedMark(){ if(_tm) return _tm; if(!markImg||!markImg.complete||!markImg.naturalWidth) return null;
+  // keep only the white hand from the round badge, recolored acid
+  const c=document.createElement('canvas'); c.width=c.height=56; const x=c.getContext('2d'); x.imageSmoothingEnabled=false;
+  x.drawImage(markImg,0,0,56,56); const d=x.getImageData(0,0,56,56);
+  for(let i=0;i<d.data.length;i+=4){ const on=d.data[i+3]>128&&d.data[i]>140; d.data[i]=179; d.data[i+1]=255; d.data[i+2]=0; d.data[i+3]=on?255:0; }
+  x.putImageData(d,0,0); return (_tm=c); }
+function drawLCD(now){
+  const g=g2, t=(now-scrT)/1000, blink=Math.floor(now/520)%2===0;
+  g.imageSmoothingEnabled=false; g.textAlign='left'; g.fillStyle=K.bk; g.fillRect(0,0,SW,SH);
+  // desktop dither
+  g.fillStyle='#262626'; for(let y=0;y<SH;y+=4) for(let x=(y/4)%2*2;x<SW;x+=4) g.fillRect(x,y,1,1);
+  if(scr==='title'){
+    // LEVELWERK OS splash, 1.5 s
+    g.fillStyle=K.bk; g.fillRect(0,0,SW,SH);
+    const m=tintedMark(); if(m){ g.drawImage(m,SW/2-28,38,56,56); }
+    g.textAlign='center'; g.font='24px Silkscreen'; g.fillStyle=K.wh;
+    const tw=g.measureText('LEVELWERK').width, sz=tw>280?Math.floor(24*280/tw):24; g.font=sz+'px Silkscreen';
+    g.fillText('LEVELWERK',SW/2,124);
+    g.fillStyle=K.bl; g.fillRect(SW/2-22,134,44,18); txt(g,'OS',SW/2,148,K.bk,16);
+    txt(g,'VERSION 1.0',SW/2,176,K.dim);
+    if(t>.5) txt(g,'(C) '+new Date().getFullYear()+' ANGEL GARCIA',SW/2,206,K.dim);
+    g.textAlign='left';
+    if(t>1.5){ scr='loading'; scrT=now; }
+  } else if(scr==='loading'){
+    const dur=reduce?.4:1.4, p=Math.min(1,t/dur);
+    win(g,30,46,260,148,'LOADING...');
+    txt(g,'LEVELWERK OS',44,78,K.wh,16);
+    const steps=['MEMORY','INPUT','DISPLAY','CART SLOT'];
+    steps.forEach((st,k)=>{ if(p>k*.22){ txt(g,st,44,98+k*12,K.dim); txt(g,p>k*.22+.18?'OK':'..',258,98+k*12,p>k*.22+.18?K.bl:K.dim); g.textAlign='left'; } });
+    bar(g,44,150,232,p);
+    txt(g,Math.round(p*100)+'%',44,180,K.dim);
+    if(t>dur+.2){ scr='empty'; scrT=now; }
+  } else if(scr==='empty'){
+    win(g,30,52,260,112,'INSERT.SYS');
+    g.strokeStyle=K.wh; g.beginPath(); g.moveTo(52,88); g.lineTo(62,70); g.lineTo(72,88); g.closePath(); g.stroke(); txt(g,'!',60,86,K.wh);
+    txt(g,'NO CARTRIDGE',84,78,K.wh,16); txt(g,'INSERT A CART TO CONTINUE',84,92,K.dim);
+    const c=CARTS[selected], fl=Math.max(0,1-(now-selectFlash)/240);
+    g.fillStyle=fl>0?K.wh:K.bl; g.fillRect(44,106,232,16); g.textAlign='center'; txt(g,'< '+pad(selected+1)+' '+(c.label||c.client).toUpperCase()+' >',160,117,K.bk); g.textAlign='left';
+    pbtn(g,110,134,48,'LOAD',blink); pbtn(g,164,134,48,'HELP',false);
+    txt(g,'D-PAD PICK   A LOAD',30,212,K.dim);
+  } else if(scr==='static'){
+    const id=g.getImageData(0,0,SW,SH),d=id.data; for(let k=0;k<d.length;k+=4){const v=Math.random()<.5?0:255; d[k]=d[k+1]=d[k+2]=v*.55;d[k+3]=255;} g.putImageData(id,0,0);
+  } else if(scr==='boot'){
+    const c=CARTS[loaded], dur=reduce?.4:1.5, p=Math.min(1,t/dur);
+    win(g,30,70,260,96,'COPYING...');
+    txt(g,'CART_'+pad(loaded+1)+'.EXE',44,98,K.wh,16);
+    txt(g,'TO "SCREEN"',44,112,K.dim);
+    bar(g,44,122,170,p); pbtn(g,222,121,56,'CANCEL',false);
+    txt(g,Math.max(0,Math.ceil((1-p)*15))+' FRAMES REMAINING',44,154,K.dim);
+    if(t>dur){ scr='run'; scrT=now; }
+  } else if(scr==='run'){
+    const c=CARTS[loaded], n=reduce?999:Math.floor(t*80);
+    win(g,6,6,308,228,'CART_'+pad(loaded+1)+'.EXE  '+ED[c.edition].name.toUpperCase()+' ED.');
+    let y=0;
+    g.font='16px Silkscreen'; g.fillStyle=K.wh;
+    const words=(c.label||c.client).toUpperCase(); g.fillText(words.slice(0,Math.max(1,n/2|0)),16,44);
+    g.fillStyle=K.bl; g.font='8px Silkscreen';
+    const sl=c.screen.slice(0,Math.max(0,n-10)); const slw=g.measureText(sl).width;
+    g.fillRect(16,54,slw+8,12); txt(g,sl,20,63,K.bk);
+    y=wrapT(g,c.facts[0][1].toUpperCase().slice(0,Math.max(0,n-24)),16,86,288,11,2,K.wh);
+    wrapT(g,c.summary.toUpperCase().slice(0,Math.max(0,n-40)),16,y+8,288,11,7,K.dim);
+    if(selected!==loaded){
+      win(g,150,164,156,62,'LOAD?');
+      txt(g,pad(selected+1)+' '+(CARTS[selected].label||CARTS[selected].client).toUpperCase(),158,190,K.wh);
+      pbtn(g,158,200,64,'A  YES',blink); pbtn(g,228,200,70,'NO',false);
+    } else {
+      pbtn(g,16,212,64,'A OPEN',false); pbtn(g,86,212,64,'B EJECT',false);
+    }
+  }
+  g.fillStyle='rgba(0,0,0,.16)'; for(let yy=0;yy<SH;yy+=2) g.fillRect(0,yy,SW,1);
+  lcd.needsUpdate=true;
+  if(!(glowFrame++%3)) updateGlow(lcd.userData.cv);
+}
+
+/* ---------- pointer ---------- */
+const ray=new THREE.Raycaster(), ndc=new THREE.Vector2();
+let mouse={x:0,y:0}, drag=null, spin={x:0,y:0}, vel={x:0,y:0};
+const setNDC=e=>{ const r=renderer.domElement.getBoundingClientRect(); ndc.set(((e.clientX-r.left)/r.width)*2-1,-((e.clientY-r.top)/r.height)*2+1); };
+stage.addEventListener('pointerdown',e=>{
+  setNDC(e); ray.setFromCamera(ndc,camera); const hit=ray.intersectObjects(pressables,false)[0];
+  if(hit){ hit.object.userData.press=1; act(hit.object.userData.action); return; }
+  drag={x:e.clientX,y:e.clientY}; stage.classList.add('dragging');
+});
+addEventListener('pointermove',e=>{
+  const r=stage.getBoundingClientRect();
+  mouse.x=Math.max(-1,Math.min(1,((e.clientX-r.left)/r.width)*2-1)); mouse.y=Math.max(-1,Math.min(1,((e.clientY-r.top)/r.height)*2-1));
+  if(drag){ const dx=e.clientX-drag.x, dy=e.clientY-drag.y; drag.x=e.clientX; drag.y=e.clientY; spin.y+=dx*0.01; spin.x+=dy*0.005; vel={x:dy*0.005,y:dx*0.01}; }
+  else if(e.target===renderer.domElement){ setNDC(e); ray.setFromCamera(ndc,camera); stage.style.cursor=ray.intersectObjects(pressables,false).length?'pointer':''; }
+});
+const end=()=>{ drag=null; stage.classList.remove('dragging'); };
+addEventListener('pointerup',end); addEventListener('pointercancel',end);
+
+/* ---------- layout + loop ---------- */
+function resize(){
+  const w=stage.clientWidth,h=stage.clientHeight; if(!w||!h) return; renderer.setSize(w,h,false); camera.aspect=w/h;
+  const half=THREE.MathUtils.degToRad(camera.fov/2);
+  const dH=((camera.aspect<1.1?6.6:7.2)/2)/Math.tan(half), dW=(4.9/2)/(Math.tan(half)*camera.aspect);
+  camera.position.set(0,1.6,Math.max(dH,dW)); camera.lookAt(0,0.35,0); camera.updateProjectionMatrix();
+}
+new ResizeObserver(resize).observe(stage);
+let visible=true; new IntersectionObserver(es=>{ visible=es[0].isIntersecting; }).observe(stage);
+function loop(now){
+  requestAnimationFrame(loop);
+  for(let i=tweens.length-1;i>=0;i--){ const tw=tweens[i], p=Math.min(1,(now-tw.t0)/tw.d); tw.fn(tw.e(p)); if(p>=1){tweens.splice(i,1);tw.r();} }
+  shelfFrame(now);
+  if(!visible) return;
+  const s=now/1000, bob=reduce?0:Math.sin(s*1.05)*0.14;
+  jolt*=0.86; root.position.y=bob-jolt*0.1;
+  if(!drag){ spin.x+=vel.x; spin.y+=vel.y; vel.x*=.92; vel.y*=.92; spin.x*=.94; spin.y*=.965; }
+  const idle=reduce?0:Math.sin(s*.45)*0.1;
+  device.rotation.x+=((mouse.y*0.16+spin.x+0.02)-device.rotation.x)*0.08;
+  device.rotation.y+=((mouse.x*0.28+spin.y+idle-0.18)-device.rotation.y)*0.08;
+  device.rotation.z=(reduce?0:Math.sin(s*.7)*0.02)-0.06;
+  const sc=1-bob*0.35; shTight.scale.set(sc,sc,1); shWide.scale.set(1-bob*.2,1-bob*.2,1); shMats[0].opacity=1-bob*1.4; shMats[1].opacity=1-bob*.6;
+  pressables.forEach(m=>{ const u=m.userData; u.press*=0.82; m.position.z=u.baseZ-u.depth*Math.min(1,u.press*1.6); });
+  const pr=n=>{ const m=pressables.find(p=>p.userData.action===n); return m?Math.min(1,m.userData.press*1.6):0; };
+  cross.rotation.y=(pr('right')-pr('left'))*0.16; cross.rotation.x=(pr('down')-pr('up'))*0.16;
+  drawLCD(now); renderer.render(scene,camera);
+}
+(function(){ try{ const c=document.createElement('canvas'); c.width=c.height=180; const g=c.getContext('2d'); const d=g.createImageData(180,180);
+  for(let i=0;i<d.data.length;i+=4){ const v=Math.random()*255; d.data[i]=d.data[i+1]=d.data[i+2]=v; d.data[i+3]=255; }
+  g.putImageData(d,0,0); document.getElementById('grain').style.backgroundImage=`url(${c.toDataURL()})`; }catch(e){} })();
+renderShelf(); renderInfo();
+Promise.all(['700 30px Archivo','800 56px Archivo','8px Silkscreen','22px "JetBrains Mono"'].map(f=>document.fonts.load(f).catch(()=>{}))).finally(()=>{
+  const {ctx,cv,draw}=face.userData; ctx.clearRect(0,0,cv.width,cv.height); draw(ctx,cv.width,cv.height); face.needsUpdate=true;
+  resize(); scrT=performance.now(); requestAnimationFrame(loop);
+});
+</script>
+
+</body>
+</html>
