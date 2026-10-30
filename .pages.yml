@@ -1,0 +1,172 @@
+# Pages CMS configuration — https://pagescms.org
+# This file tells the editor at app.pagescms.org what you can edit and where uploads go.
+
+media:
+  input: media
+  output: /media
+  extensions: [jpg, jpeg, png, webp, gif, avif, mp4, webm]
+
+content:
+  - name: projects
+    label: Projects (cartridges)
+    description: Each project is one cartridge on the shelf and one case study page at /work/<slug>. Drag to reorder; the first is newest.
+    type: file
+    path: content/projects.json
+    format: json
+    list: true
+    fields:
+      - name: slug
+        label: Page address
+        description: Lowercase words joined by dashes, e.g. riot-games-valorant. The page lives at /work/<this>.
+        type: string
+        required: true
+      - name: client
+        label: Client
+        description: As the client writes it, e.g. Naughty Dog. Shown on the cartridge.
+        type: string
+        required: true
+      - name: cartridge_label
+        label: Name on the cartridge
+        description: Optional. Use when two projects share a client, e.g. "Black Ops III". Leave empty to show the client.
+        type: string
+      - name: title
+        label: Project title
+        type: string
+        required: true
+      - name: edition
+        label: Cartridge color
+        type: select
+        options:
+          values:
+            - { value: acid, label: Acid (green) }
+            - { value: blaze, label: Blaze (orange) }
+            - { value: blue, label: System Blue }
+            - { value: clear, label: Clear }
+            - { value: smoke, label: Smoke (dark) }
+      - name: published
+        label: Show on the site
+        type: boolean
+        default: true
+      - name: year
+        label: Year
+        description: Optional, e.g. 2019 or 2018–2020.
+        type: string
+      - name: summary
+        label: One-line summary
+        description: One or two sentences. Shown on the device screen, the homepage and as the case study lead.
+        type: text
+        required: true
+      - name: screen_tag
+        label: Screen tag
+        description: Two or three words for the green tag on the device screen, e.g. Brand + marketing.
+        type: string
+      - name: poster_line_1
+        label: Big poster word (line 1)
+        description: Giant type behind the device, e.g. Naughty.
+        type: string
+      - name: poster_line_2
+        label: Big poster word (line 2)
+        description: e.g. Dog. Keep each line short.
+        type: string
+      - name: facts
+        label: Credits
+        description: Up to four label/value pairs shown in the corner, e.g. Role / Creative Director.
+        type: object
+        list: { min: 0, max: 4 }
+        fields:
+          - { name: label, label: Label, type: string }
+          - { name: value, label: Value, type: string }
+      - name: cover
+        label: Hero image
+        description: The one image that sums up the project. Wide (16:9) works best.
+        type: image
+      - name: media
+        label: Images and video
+        description: Shown in order under the overview. Use Half width in pairs for side-by-side.
+        type: object
+        list: true
+        fields:
+          - name: type
+            label: Kind
+            type: select
+            options:
+              values:
+                - { value: image, label: Image or GIF (upload) }
+                - { value: video, label: Video file (upload, short loops) }
+                - { value: embed, label: YouTube or Vimeo link }
+          - name: file
+            label: Upload
+            description: For images, GIFs and short MP4 loops.
+            type: file
+          - name: url
+            label: Video link
+            description: For YouTube or Vimeo, paste the page link.
+            type: string
+          - name: caption
+            label: Caption
+            type: string
+          - name: size
+            label: Width
+            type: select
+            options:
+              values:
+                - { value: full, label: Full width }
+                - { value: half, label: Half width }
+      - name: challenge
+        label: Challenge
+        description: 2–3 sentences. What the brief was and why it was hard.
+        type: text
+      - name: idea
+        label: Idea
+        description: 2–3 sentences. The creative idea and how it came to life.
+        type: text
+      - name: result
+        label: Result
+        description: 2–3 sentences. What shipped and what changed.
+        type: text
+      - name: link
+        label: Outside link
+        description: Optional. A live site, trailer or article. Shows a "See it live" button.
+        type: string
+
+  - name: site
+    label: Homepage text
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - { name: intro, label: Intro line (top left), type: text }
+      - { name: release, label: Release label, type: string }
+      - { name: status, label: Availability, description: "e.g. Open to select projects", type: string }
+      - { name: now, label: Now (credits), type: string }
+      - { name: previously, label: Previously (credits), type: string }
+      - { name: years, label: Years in the work, description: "e.g. 15+", type: string }
+      - { name: place, label: City, type: string }
+      - { name: coordinates, label: Coordinates, type: string }
+      - { name: about, label: About paragraph, type: text }
+      - { name: about_image, label: About illustration, description: Shown next to the About paragraph., type: image }
+      - name: capabilities
+        label: Capabilities
+        type: object
+        list: true
+        fields:
+          - { name: heading, label: Column heading, type: string }
+          - { name: items, label: Items, type: string, list: true }
+      - { name: press, label: Work featured in, type: string, list: true }
+      - name: games
+        label: Games launched
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: studio, label: Studio, type: string }
+      - { name: contact_label, label: Contact button text, type: string }
+      - { name: contact_url, label: Contact button link, type: string }
+      - { name: email, label: Email (optional), type: string }
+      - name: links
+        label: Social links
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Text, type: string }
+          - { name: url, label: Link, type: string }
