@@ -156,13 +156,7 @@ section.box{padding-block:var(--space-16) 0}
 .titles .i{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-muted)}
 .titles .s{font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-muted);text-align:right}
 .about{display:grid;grid-template-columns:200px 1fr;gap:var(--space-8);padding-top:var(--space-8)}
-.about p.lead{font-size:20px;line-height:1.45;margin:0;max-width:58ch;font-weight:500}
-.about-intro{display:grid;grid-template-columns:minmax(240px,440px) minmax(0,1fr);gap:var(--space-8);align-items:center;margin:0 0 var(--space-8)}
-.about-art{margin:0;min-width:0;position:relative}.about-art img{display:block;width:100%;height:auto;image-rendering:pixelated}
-.about-art .blink{position:absolute;inset:0;opacity:0;animation:catblink 5.2s steps(1,end) infinite}
-@keyframes catblink{0%,93%{opacity:0}94%,96.5%{opacity:1}97%,100%{opacity:0}}
-@media (prefers-reduced-motion:reduce){.about-art .blink{animation:none}}
-@media (max-width:900px){.about-intro{grid-template-columns:1fr}.about-art{max-width:440px}}
+.about p.lead{font-size:20px;line-height:1.45;margin:0 0 var(--space-8);max-width:58ch;font-weight:500}
 .caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-8)}
 .caps ul{list-style:none;margin:var(--space-3) 0 0;padding:0;display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:var(--space-3)}
 .press{display:flex;flex-wrap:wrap;gap:var(--space-2) var(--space-8);margin-top:var(--space-3);font-weight:800;font-size:clamp(22px,2.4vw,34px);letter-spacing:-.02em;text-transform:uppercase;line-height:1.05}
@@ -259,7 +253,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(-
     <div class="about">
       <div class="meta">Years in the work<br>Games · tech · entertainment</div>
       <div>
-        <div class="about-intro"><figure class="about-art"><img id="aboutArt" src="media/about-desk-pixel.png" width="315" height="235" alt="Pixel illustration of Angel at his desk, chin in hand, with a laptop, a monitor, plants and two cats" loading="lazy"><img class="blink" id="aboutBlink" src="media/about-desk-pixel-blink.png" width="315" height="235" alt="" aria-hidden="true" loading="lazy"></figure><p class="lead" id="aboutLead">I’ve spent 15 years helping games and the brands around them feel like something worth showing up for, from Call of Duty at Activision to The Last of Us at Naughty Dog and creator programs at Meta. I’ve been both a people manager and a hands-on maker, so I know the best work comes from how well people talk to each other, and bringing teams together is my favorite part of the job. Right now I’m at Riot Games on VALORANT, a bucket-list role that spans games and entertainment. I also consult through Levelwerk and Big House Consulting, helping brands of all sizes make a bigger impact with their audiences.</p></div>
+        <p class="lead" id="aboutLead">I’ve spent 15 years helping games and the brands around them feel like something worth showing up for, from Call of Duty at Activision to The Last of Us at Naughty Dog and creator programs at Meta. I’ve been both a people manager and a hands-on maker, so I know the best work comes from how well people talk to each other, and bringing teams together is my favorite part of the job. Right now I’m at Riot Games on VALORANT, a bucket-list role that spans games and entertainment. I also consult through Levelwerk and Big House Consulting, helping brands of all sizes make a bigger impact with their audiences.</p>
         <div class="caps" id="caps">
           <div><span class="meta">Direction</span><ul><li>Creative direction</li><li>Brand development</li><li>Concept development</li><li>Brand identity</li><li>Integrated marketing</li><li>Livestream assets</li></ul></div>
           <div><span class="meta">Craft</span><ul><li>Illustration</li><li>Photography</li><li>Typography</li><li>3D product concepts</li></ul></div>
@@ -355,7 +349,7 @@ const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','
 const $=id=>document.getElementById(id);
 $('intro').textContent=SITE.intro; $('release').textContent=SITE.release;
 $('place').innerHTML=esc(SITE.place)+'<br>'+esc(SITE.coordinates);
-$('years').textContent=SITE.years+' yrs'; $('aboutLead').textContent=SITE.about; if(SITE.about_image && !/about-desk-pixel\.png$/.test(SITE.about_image)){ $('aboutArt').src=SITE.about_image; $('aboutBlink').remove(); }  // the blink only fits the default art
+$('years').textContent=SITE.years+' yrs'; $('aboutLead').textContent=SITE.about;
 $('caps').innerHTML=(SITE.capabilities||[]).map(c=>`<div><span class="meta">${esc(c.heading)}</span><ul>${(c.items||[]).map(i=>`<li>${esc(i)}</li>`).join('')}</ul></div>`).join('');
 $('press').innerHTML=(SITE.press||[]).map(p=>`<span>${esc(p)}</span>`).join('');
 $('contactStatus').textContent=SITE.status; $('cta').textContent=SITE.contact_label; $('cta').href=SITE.contact_url;

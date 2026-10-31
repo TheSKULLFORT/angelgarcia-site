@@ -144,7 +144,6 @@ content:
       - { name: place, label: City, type: string }
       - { name: coordinates, label: Coordinates, type: string }
       - { name: about, label: About paragraph, type: text }
-      - { name: about_image, label: About illustration, description: Shown next to the About paragraph., type: image }
       - name: capabilities
         label: Capabilities
         type: object
